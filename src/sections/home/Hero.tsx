@@ -1,12 +1,13 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, CalendarDays, FileText, Users } from 'lucide-react';
+import { ArrowRight, FileText, Users } from 'lucide-react';
 import gsap from 'gsap';
 import { useT } from '../../i18n/LanguageContext';
 import ParticleField from '../../components/three/ParticleField';
 import { useMousePosition } from '../../hooks/useMousePosition';
 import { algorithmItems } from '../../pages/Algorithms';
 import { skillItems } from '../../pages/Skills';
+import ActivityGallery from './ActivityGallery';
 
 export default function Hero() {
   const t = useT();
@@ -130,16 +131,7 @@ export default function Hero() {
               {t.hero.developerCommunity}
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
-            <a
-              href="https://actphyscause-challenge.x-era.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group glass flex items-center gap-2 whitespace-nowrap rounded-2xl px-5 py-4 text-sm font-semibold text-brand-text transition-all duration-300 hover:bg-brand-bg-secondary hover:shadow-soft xl:px-7 xl:text-base"
-            >
-              <CalendarDays className="w-5 h-5 text-brand-accent" />
-              {t.hero.activeEvent}
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </a>
+            <ActivityGallery />
           </div>
 
           {/* Stats preview */}
